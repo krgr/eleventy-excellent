@@ -16,6 +16,7 @@ Also let me know if you miss any features. Currently in planning: dark mode, inl
     - [Creating a production build](#creating-a-production-build)
   - [Built with Eleventy Excellent](#built-with-eleventy-excellent)
   - [Logbook](#logbook)
+    - [23-03-24](#23-03-24)
     - [23-01-26](#23-01-26)
     - [23-01-25](#23-01-25)
     - [23-01-09](#23-01-09)
@@ -63,6 +64,7 @@ https://eleventy-excellent.netlify.app/
 - Edit your preferences (colors, fluid text sizes etc.) in `src/assets/design-tokens`.
 - Optional: set your (favicon) icons in `src/assets/images/favicon`.
 - Optional: rename `.env-sample` to `.env` and set custom URL for local development.
+- Optional: Change fonts. This starter uses three fonts, Red Hat Display, Inter and Roboto Mono. You can add or delete fonts in `src/assets/fonts`. I recommend creating font subsets for performance, for example using the [Fontsquirrel Webfont Generator](https://www.fontsquirrel.com/tools/webfont-generator). Next, edit `src/assets/css/global/fonts.css`. Add your new font aliases in `src/assets/design-tokens/fonts.json`. Finally, in `src/_layouts/base.njk` edit the font preloads. Roboto Mono is only used for code blocks. It's preload is set directly in the post layout: `src/_layouts/post.njk`.
 
 ## Deploy directly to Netlify
 
@@ -94,13 +96,22 @@ npm run build
 
 ## Built with Eleventy Excellent
 
-- [andystitt.com](https://andystitt.com/) (slightly customized)
-- [figcat.com](https://figcat.com/) (heavily customized)
-- [stephenanfield.com](https://stephenanfield.com/) (slightly customized)
-- [krgr.dev](https://krgr.dev/) (slightly customized)
-- [lenesaile.com](https://www.lenesaile.com/) (heavily customized)
+A list of sites based on eleventy-excellent, some only slightly modified, others completely transformed.
+
+- [joewrites.io](https://joewrites.io/)
+- [flamedfury.com](https://flamedfury.com/)
+- [deimidis.me](https://deimidis.me/)
+- [andystitt.com](https://andystitt.com/)
+- [figcat.com](https://figcat.com/)
+- [stephenanfield.com](https://stephenanfield.com/)
+- [krgr.dev](https://krgr.dev/)
+- [lenesaile.com](https://www.lenesaile.com/)
 
 ## Logbook
+
+### 23-03-24
+
+Extended the "Images" blog post with an example with custom `sizes` attribute and explained where the CSS can be adjusted.
 
 ### 23-01-26
 
@@ -112,7 +123,7 @@ npm run build
 
 ### 23-01-25
 
-- updated Elevebty
+- updated Eleventy
 - minor: added automatically generated open graph images for blog posts
 
 ### 23-01-09
