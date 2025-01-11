@@ -3,7 +3,7 @@ layout: base
 schema: blog
 ---
 
-<article class="region blog" style="--region-space-top: var(--space-xl-2xl)">
+<article class="region" style="--region-space-top: var(--space-xl-2xl)">
   <div class="wrapper flow prose">
     <h1 class="gradient-text">{{ title }}</h1>
 
@@ -12,7 +12,7 @@ schema: blog
       {% image image, alt or title, credit, "eager", "feature" %}
     {% endif %}
 
-    <p class="meta | cluster" style="--gutter: var(--space-xs-s)">
+    <p class="meta | cluster gutter-xs-s">
       <!-- date -->
       {% set definedDate = date %} {% include "partials/date.njk" %}
       {%
@@ -21,7 +21,7 @@ schema: blog
       %}
         <!-- tags -->
         {% for tag in tags %}{% if tag != "posts" %}
-          <a class="button post-tag" href="/tags/{{ tag }}"> {{ tag }} </a>
+          <a class="button" href="/tags/{{ tag }}" data-small-button> {{ tag }} </a>
         {% endif %}{% endfor %}
       {% endif %}
     </p>
@@ -42,7 +42,7 @@ schema: blog
   </div>
 </article>
 
-{%- css "inline" -%}
+{%- css "local" -%}
   {%- include 'css/post.css' -%}
   {%- include 'css/footnotes.css' -%}
 {%- endcss -%}
