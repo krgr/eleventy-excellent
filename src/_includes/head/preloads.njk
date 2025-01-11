@@ -18,8 +18,8 @@
 {%- if preloads -%}
   <!-- prettier-ignore -->
   <link rel="preload"
-      href="{{ preloads.href }}"
-      as="{{ preloads.as }}"
-      {% if preloads.type %}type={{ preloads.type }}{% endif %}{% if preloads.imagesrcset %}imagesrcset="{{ preloads.imagesrcset }}"{% endif %}
-      {% if preloads.crossorigin %}crossorigin{% endif %} />
+			href="{{ preloads.href }}"
+			as="{{ preloads.as }}"
+			{% if preloads.type %}type={{ preloads.type }}{% endif %}{% if preloads.imagesrcset %}imagesrcset="{{ preloads.imagesrcset }}"{% endif %}
+			{% if preloads.crossorigin %}crossorigin{% endif %} />
 {% endif %}
