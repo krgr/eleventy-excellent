@@ -28,10 +28,7 @@ export const markdownLib = markdownIt({
       class: 'heading-anchor'
     })
   })
-  .use(markdownItClass, {
-    ol: 'list',
-    ul: 'list'
-  })
+  .use(markdownItClass, {})
   .use(markdownItLinkAttributes, [
     {
       // match external links
@@ -58,7 +55,7 @@ export const markdownLib = markdownIt({
       const attributes = token.attrs || [];
       const hasEleventyWidths = attributes.some(([key]) => key === 'eleventy:widths');
       if (!hasEleventyWidths) {
-        attributes.push(['eleventy:widths', '650,960,1200']);
+        attributes.push(['eleventy:widths', '650,960,1400']);
       }
 
       const attributesString = attributes.map(([key, value]) => `${key}="${value}"`).join(' ');

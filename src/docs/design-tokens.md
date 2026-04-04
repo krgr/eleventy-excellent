@@ -8,17 +8,17 @@ Additional colors, variants and gradients for custom properties are automaticall
 
 In the [style guide](/styleguide/) you can see how everything turns out.
 
-**Special case: colors**
+### Special case: colors
 
 As of version 4.0, you can create colors dynamically. Run `npm run colors` after setting your color values in `src/_data/designTokens/colorsBase.json`. This will create / overwrite the required `colors.json` file in the same directory. These colors become custom properties (e.g. `--color-gray-100`) and utility classes similar to the Tailwind CSS syntax (for example `bg-gray-100`, `text-gray-900`).
 
 If you want to adjust how the colors turn out, edit `src/_config/setup/create-colors.js`.
 
-Placed under `neutral` or `vibrant`, colors are converted into scalable palettes. `neutral` is better for grayish / monochromatic colors, while `vibrant` is better for colorful palettes. Colors listed under `fixed` remain as standalone values without generating shades. Each color placed here also generates a "subdued" version for the dark theme.
+Colors placed under `shades_neutral` or `shades_vibrant` are converted into scalable palettes. `shades_neutral` is better for grayish / monochromatic colors, while `shades_vibrant` is better for colorful palettes. Colors listed under `standalone` and `light_dark` are left as they are, `light_dark` items output a second "subdued" version optimized for dark themes.
 
 ```js
 // this creates a palette with shades of green, 100 to 900
-  "vibrant": [
+  "shades_vibrant": [
     {
       "name": "green",
       "value": "#008000"

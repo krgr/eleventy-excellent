@@ -1,18 +1,30 @@
 ---
 layout: base
-schema: blog
+schema: BlogPosting
 ---
 
-<article class="region" style="--region-space-top: var(--space-xl-2xl)">
+<div class="region" style="--region-space-top: var(--space-xl-2xl)">
   <div class="wrapper flow prose">
     <h1 class="gradient-text">{{ title }}</h1>
 
     {% if image %}
       <!-- image -->
-      {% image image, alt or title, credit, "eager", "feature" %}
+      {%
+        imageKeys {
+          "src": image,
+          "alt": alt or "",
+          "credit": credit,
+          "loading": "eager",
+          "containerClass": "feature"
+        }
+      %}
     {% endif %}
 
     <p class="meta | cluster gutter-xs-s">
+      <!-- draft status -->
+      {%- if draft -%}
+        <span class="button" data-small-button data-button-variant="tertiary">draft</span>
+      {%- endif %}
       <!-- date -->
       {% set definedDate = date %} {% include "partials/date.njk" %}
       {%
@@ -21,7 +33,7 @@ schema: blog
       %}
         <!-- tags -->
         {% for tag in tags %}{% if tag != "posts" %}
-          <a class="button" href="/tags/{{ tag }}" data-small-button> {{ tag }} </a>
+          <a class="button" href="/tags/{{ tag | slugify }}/" data-small-button> {{ tag }} </a>
         {% endif %}{% endfor %}
       {% endif %}
     </p>
@@ -41,7 +53,7 @@ schema: blog
       alt="{{ meta.author.name }}"
     />
   </div>
-</article>
+</div>
 
 {%- css "local" -%}
   {%- include 'css/post.css' -%}

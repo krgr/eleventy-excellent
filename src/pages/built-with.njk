@@ -26,20 +26,20 @@ widths: [400, 520]
   <code>npm run screenshots</code> to add or update the screenshots.
 </p>
 
-<article class="full  section" style="--spot-color: var(--color-bg-accent)">
-  {% svg "divider/soft-top", null, "seperator" %}
+<article class="full section" style="--spot-color: var(--color-bg-accent)">
+  {% svg "divider/soft-top", null, "divider" %}
 
   <section class="feature section__inner wrapper">
     <h2>Based on, or built with Eleventy Excellent:</h2>
     <div
-      class="feature grid region"
+      class="grid feature region"
       style="--region-space-top: var(--space-xl); --gutter: var(--space-xl) var(--space-xs)"
     >
       <!-- you find tha data for that in src/_data/builtwith.json -->
       {% for site in builtwith | shuffle %}
         <custom-card clickable img-square class="text-step-min-1" style="--card-bg: var(--color-bg)">
           {% image "./src/assets/images/screenshots/" + site.filename + ".jpg", site.name, null, "lazy", null, null, widths, sizes %}
-          <h3 slot="headline" style="font-size: var(--size-step-0);">{{ site.name }}</h3>
+          <h3 slot="headline" class="text-step-min-1">{{ site.name }}</h3>
 
           <p slot="content">{{ site.description }}</p>
           <footer slot="footer" class="repel">
@@ -53,7 +53,7 @@ widths: [400, 520]
     </div>
   </section>
 
-  {% svg "divider/soft-bottom", null, "seperator" %}
+  {% svg "divider/soft-bottom", null, "divider" %}
 </article>
 
 {% css "local" %}

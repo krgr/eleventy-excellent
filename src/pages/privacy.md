@@ -4,6 +4,7 @@ discover:
   title: Privacy Policy
 permalink: /privacy/index.html
 description: I respect the EU General Data Protection Regulation (GDPR). This policy document explains how I collect and handle any information you provide to me.
+date: "Last Modified"
 layout: page
 ---
 
@@ -27,10 +28,14 @@ This website transmits itself using HTTPS, encrypting all data between the brows
 
 {{ personal.address }}
 
-If you have any questions or doubts, please contact me: <a href="mailto:{{ personal.email }}">{{ personal.email }}</a>.
+If you have any questions or doubts, please contact me: {{ personal.email }}.
 
 **Changes to the policy**
 If I change the content of this policy, those changes will be effective at the time I post them here.
 
 **Complaints**
-If you have any reason to complain about the way I handle your privacy, please contact me by email: <a href="mailto:{{ personal.email }}">{{ personal.email }}</a>.
+If you have any reason to complain about the way I handle your privacy, please contact me by email: {{ personal.email }}.
+
+---
+
+*Last updated: {{ page.date | formatDate('MMMM D, YYYY') }}*
